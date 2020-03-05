@@ -1,19 +1,24 @@
 backend:
   name: git-gateway
 
+publish_mode: editorial_workflow
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
-collections: # A list of collections the CMS should be able to edit
-  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Post" # Used in the UI, ie.: "New Post"
-    folder: "site/content/post" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - name: "pages"
-    label: "Pages"
+collections:
+        - name: "posts" # Used in routes, e.g. /admin/collections/blog
+        label: "Posts" # Used in the UI
+        folder: "_posts" # The path to the folder where the documents are stored
+        create: true # Allow users to create new documents in this collection
+        slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
+        filter:
+                - field: publication_url
+                - value: ""
+        fields: # The fields for each document, usually in front matter
+                - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+                - {label: "Title", name: "title", widget: "string"}
+                - {label: "Publish Date", name: "date", widget: "datetime"}
+                - {label: "Featured Image", name: "image", widget: "image"}
+                - {label: "Tags", name: "tags", widget: "string"}
+                - {label: "Body", name: "body", widget: "markdown"}
+            
