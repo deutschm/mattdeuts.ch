@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Netlify'
-SITENAME = u'cms-template'
+AUTHOR = u'Matt Deutsch'
+SITENAME = u'Matt\'s Blog'
 SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'America/Los_Angeles'
+TIMEZONE = 'America/Dallas'
 
 DEFAULT_LANG = u'en'
 
@@ -20,10 +20,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('Pelican', 'http://getpelican.com/'))
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),
