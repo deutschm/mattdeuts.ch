@@ -1,67 +1,53 @@
-# Pelican + netlify CMS
+---
 
-This is the basic Pelican starter site, with netlify CMS integrated.
+Example [Hugo] website using GitLab with [Netlify](https://www.netlify.com/).
 
-## Getting Started
+---
 
-Clone this repository to your local machine, then download the relevant release of
-the [netlify-git-api](https://github.com/netlify/netlify-git-api/releases) CLI tool.
+## Netlify Configuration
 
-CD into your new repo, and run:
+In order to build this site with Netlify, simply log in or register at 
+https://app.netlify.com/, then select "New site from Git" from the top
+right. Select GitLab, authenticate if needed, and then select this
+project from the list. Netlify will handle the rest.
 
-```bash
-netlify-git-api users add
-netlify-git-api serve
-```
+In the meantime, you can take advantage of all the great GitLab features
+like merge requests, issue tracking, epics, and everything else GitLab has
+to offer.
 
-Then open a new terminal, CD into your new repo and run:
+## Building locally
 
-```bash
-virtualenv pelican-env
-source pelican-env/bin/activate
-pip install -r requirements.txt
-./develop_server.sh start
-```
+To work locally with this project, you'll have to follow the steps below:
 
-Now navigate to [localhost:8000](http://localhost:8000/) to preview the site, and
-to [localhost:8000/admin](http://localhost:8000/admin) to log into the CMS.
+1. Fork, clone or download this project
+1. [Install][] Hugo
+1. Preview your project: `hugo server`
+1. Add content
+1. Generate the website: `hugo` (optional)
 
-## Deploying to production
+Read more at Hugo's [documentation][].
 
-To deploy to production, make sure to push this repository to a Github repo you own.
+### Preview your site
 
-Then go to [netlify](https://app.netlify.com) and start a new project. Pick your
-new Github repository.
+If you clone or download this project to your local computer and run `hugo server`,
+your site can be accessed under `localhost:1313/hugo/`.
 
-Fill out the build command and public folder:
+The theme used is adapted from http://themes.gohugo.io/beautifulhugo/.
 
-**Build command:** `make publish`
-**Folder:** `/output`
+## Did you fork this project?
 
-Now go to [the GitHub developer application screen](https://github.com/settings/developers)
-and **register new application**.
+If you forked this project for your own use, please go to your project's
+**Settings** and remove the forking relationship, which won't be necessary
+unless you want to contribute back to the upstream project.
 
-### Register New application (on GitHub)
-- **Application name**  Ex : Netlify CMS  
-- **Homepage URL** Ex: https://foobar-1234.netlify.com
-- **Authorization callback URL**  https://api.netlify.com/auth/done
+## Troubleshooting
 
+1. CSS is missing! That means two things:
 
+    Either that you have wrongly set up the CSS URL in your templates, or
+    your static generator has a configuration option that needs to be explicitly
+    set in order to serve static assets under a relative URL.
 
-
-Once you've setup the application, go back to netlify, navigate to the **Access** tab. Then
-fill in your new Client ID and Client Secret in the Github Authentication Provider and check
-the **Enable GitHub** box.
-
-Now anybody with write access to your GitHub repository can log in at yoursite.netlify.com/admin
-and use the CMS.
-
-**Enjoy!**
-
-## Bug reports, feature requests, etc
-
-We love feedback, contributions, better documentation, tutorials, general comments,
-random hatemail, rants, love, crazy ideas, etc, etc!
-
-Contact us at [any of netlify's normal channels](https://www.netlify.com/contact) and
-open issues or pull requests at [the netlify-cms GitHub repo](https://github.com/netlify/netlify-cms)
+[hugo]: https://gohugo.io
+[install]: https://gohugo.io/overview/installing/
+[documentation]: https://gohugo.io/overview/introduction/
