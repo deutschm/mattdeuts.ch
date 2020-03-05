@@ -1,4 +1,4 @@
-baseurl = "https://mattdeuts.ch"
+baseurl = "https://mattdeuts.ch/"
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
@@ -68,3 +68,4 @@ pygmentCodeFences = true
     name = "Tags"
     url = "tags"
     weight = 3
+
