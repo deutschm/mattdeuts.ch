@@ -8,4 +8,4 @@ comments: false
 
 ### my history
 
-### curriculum vitae
+### [curriculum vitae](/cv.pdf)
