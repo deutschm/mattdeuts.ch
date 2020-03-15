@@ -33,3 +33,5 @@ fields:
     min: 
     max: 
   label: Keywords
+pages:
+- content/post/test-post-please-ignore.md
