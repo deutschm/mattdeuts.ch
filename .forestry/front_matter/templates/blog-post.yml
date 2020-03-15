@@ -1,4 +1,35 @@
 ---
 label: Blog post
 hide_body: false
-fields: []
+fields:
+- name: author
+  type: text
+  config:
+    required: false
+  label: Author
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: description
+  type: text
+  config:
+    required: false
+  label: Description
+- name: date
+  type: datetime
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  label: Date
+- name: keywords
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Keywords
